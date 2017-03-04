@@ -5,6 +5,7 @@
 <link rel="import" href="../iron-flex-layout/iron-flex-layout.html" />
 <link rel="import" href="../paper-checkbox/paper-checkbox.html" />
 <link rel="import" href="../iron-image/iron-image.html" />
+<link rel="import" href="../iorder-style/iorder-style.html" />
 
 <!--
 `panel-login`
@@ -15,6 +16,7 @@ IOrder panel login
 
 <dom-module id="panel-login">
   <template>
+    <style include="iorder-style"></style>
     <style>
       :host {
         display: block;
@@ -31,23 +33,22 @@ IOrder panel login
 
       paper-button {
         margin-top: 30px;
-        color: var(--paper-grey-50);
+        color: var(--font-color-white);
         --paper-button-ink-color: var(--paper-blue-a200);
-        background-color: var(--google-blue-500);
+        background-color: var(--primary-color);
       }
 
       paper-checkbox {
         margin-top: 20px;
         display: block;
+        --paper-checkbox-checked-color: var(--primary-color);
+        --paper-checkbox-checked-ink-color: var(--primary-color);
+        --paper-checkbox-unchecked-color: var(--font-color-gray);
+        --paper-checkbox-unchecked-ink-color: var(--primary-color);
+        --paper-checkbox-label-color: var(--font-color-gray);
+        --paper-checkbox-label-checked-color: var(--font-color-black);
       }
 
-      /*.remember paper-checkbox {
-        --paper-checkbox-checked-color: var(--paper-gray-500);
-        --paper-checkbox-checked-ink-color: var(--paper-blue-500);
-        --paper-checkbox-unchecked-color: var(--paper-gray-900);
-        --paper-checkbox-unchecked-ink-color: var(--paper-gray-900);
-        --paper-checkbox-label-color: var(--paper-gray-900);
-      }*/
     </style>
 
     <div style="text-align: center;">
