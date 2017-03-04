@@ -20,25 +20,25 @@ IOrder panel login
         display: block;
       }
 
-      .flex-center-justified {
-        @apply(--layout-horizontal);
-        @apply(--layout-center-justified);
-      }
-
-      .logo {
-        display: block;
+      iron-image {
+        display: none;
         margin: 5px auto;
       }
 
-      .login {
+      iron-image[src] {
+        display: inline-block;
+      }
+
+      paper-button {
         margin-top: 30px;
         color: var(--paper-grey-50);
         --paper-button-ink-color: var(--paper-blue-a200);
         background-color: var(--google-blue-500);
       }
 
-      .remember {
+      paper-checkbox {
         margin-top: 20px;
+        display: block;
       }
 
       /*.remember paper-checkbox {
@@ -48,22 +48,16 @@ IOrder panel login
         --paper-checkbox-unchecked-ink-color: var(--paper-gray-900);
         --paper-checkbox-label-color: var(--paper-gray-900);
       }*/
-
     </style>
 
-    <iron-image hidden$="[[logoSrc]]" class="logo" src="[[logoSrc]]"></iron-image>
-
-    <div>
-      <paper-input label="نام کاربری"></paper-input>
-      <paper-input label="گذرواژه" type="password"></paper-input>
+    <div style="text-align: center;">
+      <iron-image src$="[[logoSrc]]"></iron-image>
     </div>
-
-    <div class="remember">
-      <paper-checkbox> مرا به خاطر بسپار </paper-checkbox>
-    </div>
-
-    <div class="flex-center-justified">
-      <paper-button class="login" raised>ورود</paper-button>
+    <paper-input label="نام کاربری"></paper-input>
+    <paper-input label="گذرواژه" type="password"></paper-input>
+    <paper-checkbox> مرا به خاطر بسپار </paper-checkbox>
+    <div style="text-align: center;">
+      <paper-button raised>ورود</paper-button>
     </div>
 
   </template>
