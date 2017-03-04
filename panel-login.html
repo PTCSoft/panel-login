@@ -1,7 +1,9 @@
 <link rel="import" href="../polymer/polymer.html" />
 <link rel="import" href="../paper-input/paper-input.html" />
 <link rel="import" href="../paper-button/paper-button.html" />
-<link rel="import" href="../paper-styles/color.html">
+<link rel="import" href="../paper-styles/color.html" />
+<link rel="import" href="../iron-flex-layout/iron-flex-layout.html" />
+<link rel="import" href="../paper-checkbox/paper-checkbox.html" />
 
 <!--
 `panel-login`
@@ -18,6 +20,11 @@ IOrder panel login
         direction: rtl;
       }
 
+      .flex-center-justified {
+        @apply(--layout-horizontal);
+        @apply(--layout-center-justified);
+      }
+
       .logo {
         background-color: var(--google-blue-500);
         border-radius: 100%;
@@ -26,26 +33,51 @@ IOrder panel login
         line-height: 85px;
         width: 90px;
         height: 90px;
-        margin: 5px auto;
-        color: #fafafa;
+        /*margin: 5px auto;*/
+        color: var(--paper-grey-50);
       }
 
       .login {
-        margin-top: 30px;
-        color: #fafafa
+        margin-top: 10px;
+        color: var(--paper-grey-50);
         --paper-button-ink-color: var(--paper-blue-a200);
         background-color: var(--google-blue-500);
       }
+
+      .remember {
+        margin-top: 30px;
+      }
+
+      .remember paper-checkbox {
+        direction: ltr;
+        --paper-checkbox-checked-color: var(--paper-blue-500);
+        --paper-checkbox-checked-ink-color: var(--paper-blue-500);
+        --paper-checkbox-unchecked-color: var(--paper-blue-900);
+        --paper-checkbox-unchecked-ink-color: var(--paper-blue-900);
+        --paper-checkbox-label-color: var(--paper-blue-900);
+        /*--paper-checkbox-label-checked-color: var(--paper-blue-900);*/
+      }
+
     </style>
     <div>
-      <div class="logo">logo</div>
+
+      <div class="flex-center-justified">
+        <div class="logo">logo</div>
+      </div>
+
       <div>
         <paper-input label="نام کاربری"></paper-input>
         <paper-input type="password" label="گذرواژه"></paper-input>
       </div>
-      <div class="" >
+
+      <div class="flex-center-justified remember">
+        <paper-checkbox> مرا به خاطر بسپار </paper-checkbox>
+      </div>
+
+      <div class="flex-center-justified">
         <paper-button class="login" raised>ورود</paper-button>
       </div>
+
     </div>
 
   </template>
@@ -56,10 +88,6 @@ IOrder panel login
       is: 'panel-login',
 
       properties: {
-        prop1: {
-          type: String,
-          value: 'panel-login',
-        },
       },
 
     });
