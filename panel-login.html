@@ -4,6 +4,7 @@
 <link rel="import" href="../paper-styles/color.html" />
 <link rel="import" href="../iron-flex-layout/iron-flex-layout.html" />
 <link rel="import" href="../paper-checkbox/paper-checkbox.html" />
+<link rel="import" href="../iron-image/iron-image.html" />
 
 <!--
 `panel-login`
@@ -25,7 +26,7 @@ IOrder panel login
         @apply(--layout-center-justified);
       }
 
-      .logo {
+      /*.logo {
         background-color: var(--google-blue-500);
         border-radius: 100%;
         font-size: 30px;
@@ -33,9 +34,8 @@ IOrder panel login
         line-height: 85px;
         width: 90px;
         height: 90px;
-        /*margin: 5px auto;*/
         color: var(--paper-grey-50);
-      }
+      }*/
 
       .login {
         margin-top: 10px;
@@ -55,14 +55,15 @@ IOrder panel login
         --paper-checkbox-unchecked-color: var(--paper-blue-900);
         --paper-checkbox-unchecked-ink-color: var(--paper-blue-900);
         --paper-checkbox-label-color: var(--paper-blue-900);
-        /*--paper-checkbox-label-checked-color: var(--paper-blue-900);*/
       }
 
     </style>
     <div>
 
       <div class="flex-center-justified">
-        <div class="logo">logo</div>
+        <div class="logo">
+          <iron-image src="{{pathLogo}}"></iron-image>
+        </div>
       </div>
 
       <div>
@@ -88,6 +89,12 @@ IOrder panel login
       is: 'panel-login',
 
       properties: {
+
+        pathLogo: {
+          type: String,
+          value: "../2.png",
+        },
+
       },
 
     });
