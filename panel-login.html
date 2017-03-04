@@ -18,7 +18,6 @@ IOrder panel login
     <style>
       :host {
         display: block;
-        direction: rtl;
       }
 
       .flex-center-justified {
@@ -26,59 +25,45 @@ IOrder panel login
         @apply(--layout-center-justified);
       }
 
-      /*.logo {
-        background-color: var(--google-blue-500);
-        border-radius: 100%;
-        font-size: 30px;
-        text-align: center;
-        line-height: 85px;
-        width: 90px;
-        height: 90px;
-        color: var(--paper-grey-50);
-      }*/
+      .logo {
+        display: block;
+        margin: 5px auto;
+      }
 
       .login {
-        margin-top: 10px;
+        margin-top: 30px;
         color: var(--paper-grey-50);
         --paper-button-ink-color: var(--paper-blue-a200);
         background-color: var(--google-blue-500);
       }
 
       .remember {
-        margin-top: 30px;
+        margin-top: 20px;
       }
 
-      .remember paper-checkbox {
-        direction: ltr;
-        --paper-checkbox-checked-color: var(--paper-blue-500);
+      /*.remember paper-checkbox {
+        --paper-checkbox-checked-color: var(--paper-gray-500);
         --paper-checkbox-checked-ink-color: var(--paper-blue-500);
-        --paper-checkbox-unchecked-color: var(--paper-blue-900);
-        --paper-checkbox-unchecked-ink-color: var(--paper-blue-900);
-        --paper-checkbox-label-color: var(--paper-blue-900);
-      }
+        --paper-checkbox-unchecked-color: var(--paper-gray-900);
+        --paper-checkbox-unchecked-ink-color: var(--paper-gray-900);
+        --paper-checkbox-label-color: var(--paper-gray-900);
+      }*/
 
     </style>
+
+    <iron-image hidden$="[[logoSrc]]" class="logo" src="[[logoSrc]]"></iron-image>
+
     <div>
+      <paper-input label="نام کاربری"></paper-input>
+      <paper-input label="گذرواژه" type="password"></paper-input>
+    </div>
 
-      <div class="flex-center-justified">
-        <div class="logo">
-          <iron-image src="{{pathLogo}}"></iron-image>
-        </div>
-      </div>
+    <div class="remember">
+      <paper-checkbox> مرا به خاطر بسپار </paper-checkbox>
+    </div>
 
-      <div>
-        <paper-input label="نام کاربری"></paper-input>
-        <paper-input type="password" label="گذرواژه"></paper-input>
-      </div>
-
-      <div class="flex-center-justified remember">
-        <paper-checkbox> مرا به خاطر بسپار </paper-checkbox>
-      </div>
-
-      <div class="flex-center-justified">
-        <paper-button class="login" raised>ورود</paper-button>
-      </div>
-
+    <div class="flex-center-justified">
+      <paper-button class="login" raised>ورود</paper-button>
     </div>
 
   </template>
@@ -90,9 +75,8 @@ IOrder panel login
 
       properties: {
 
-        pathLogo: {
-          type: String,
-          value: "../2.png",
+        logoSrc: {
+          type: String
         },
 
       },
