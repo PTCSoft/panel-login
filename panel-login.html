@@ -36,9 +36,9 @@ IOrder panel login
       paper-button {
         @apply(--paper-font-button);
         margin-top: 30px;
-        color: var(--font-color-white);
+        color: var(--primary-color); /*--font-color-white*/
         --paper-button-ink-color: var(--paper-blue-a200);
-        background-color: var(--primary-color);
+        border: 1px solid var(--primary-color);
       }
 
       paper-checkbox {
@@ -61,7 +61,7 @@ IOrder panel login
     <paper-input label="گذرواژه" type="password"></paper-input>
     <paper-checkbox> مرا به خاطر بسپار </paper-checkbox>
     <div style="text-align: center;">
-      <paper-button raised>ورود</paper-button>
+      <paper-button >ورود</paper-button>
     </div>
 
   </template>
