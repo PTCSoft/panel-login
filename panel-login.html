@@ -22,6 +22,7 @@ IOrder panel login
     <style>
       :host {
         display: block;
+        color: var(--primary-text-color);
       }
 
       iron-image {
@@ -35,10 +36,22 @@ IOrder panel login
 
       paper-button {
         @apply(--paper-font-button);
+        font-weight: bold;
+
         margin-top: 30px;
-        color: var(--primary-color); /*--font-color-white*/
+        color: var(--primary-color);
+        /*color: var(--invert-text-color);*/
+
         --paper-button-ink-color: var(--paper-blue-a200);
         border: 1px solid var(--primary-color);
+        /*background-color: var(--primary-color);*/
+
+        --paper-button: {
+          padding: 0.55em 0.57em;
+          min-width: 5.5em;
+          /*@apply(--login-button);*/
+        }
+
       }
 
       paper-checkbox {
@@ -61,7 +74,7 @@ IOrder panel login
     <paper-input label="گذرواژه" type="password"></paper-input>
     <paper-checkbox> مرا به خاطر بسپار </paper-checkbox>
     <div style="text-align: center;">
-      <paper-button >ورود</paper-button>
+      <paper-button>ورود</paper-button>
     </div>
 
   </template>
@@ -73,8 +86,12 @@ IOrder panel login
 
       properties: {
 
+        /*
+        * Logo src path (optional)
+        * @default: null
+        */
         logoSrc: {
-          type: String
+          type: String,
         },
 
       },
