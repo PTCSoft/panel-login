@@ -17,8 +17,11 @@ IOrder panel login
   <template>
     <style>
       :host {
-        display: block;
+        display: flex;
+        flex-direction: column;
+
         color: var(--primary-text-color);
+
         @apply(--panel-login);
       }
 
@@ -33,15 +36,11 @@ IOrder panel login
 
       paper-button {
         @apply(--paper-font-button);
-        /*font-weight: bold;*/
 
         margin-top: 30px;
         color: var(--primary-color);
-        /*color: var(--invert-text-color);*/
 
-        /*--paper-button-ink-color: var(--paper-blue-a200);*/
         border: 1px solid var(--primary-color);
-        /*background-color: var(--primary-color);*/
 
         --paper-button: {
           padding: 0.55em 0.57em;
