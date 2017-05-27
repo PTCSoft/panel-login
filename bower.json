@@ -1,9 +1,35 @@
 {
   "name": "panel-login",
+  "authors": [
+    "PTC Corporation <info@ptc.co.ir>"
+  ],
   "description": "IOrder panel login",
   "main": "panel-login.html",
+  "keywords": [
+    "ptc",
+    "polymer",
+    "iorder",
+    "element",
+    "login",
+    "panel"
+  ],
+  "license": "Copyright © 2017 PTC Corporation, All rights reserved",
+  "homepage": "https://github.com/PTCSoft/panel-login",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.4.0"
+    "polymer": "Polymer/polymer#^1.8.0",
+    "paper-input": "PolymerElements/paper-input#^1.1.23",
+    "paper-button": "PolymerElements/paper-button#^1.0.14",
+    "iron-flex-layout": "PolymerElements/iron-flex-layout#^1.3.2",
+    "paper-checkbox": "PolymerElements/paper-checkbox#^1.4.2",
+    "iron-image": "PolymerElements/iron-image#^1.2.5"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
