@@ -68,7 +68,7 @@ PTC Login Panel
     </div>
     <paper-input label="نام کاربری" type="text" value="{{username}}"></paper-input>
     <paper-input label="گذرواژه" type="password" value="{{password}}"></paper-input>
-    <paper-checkbox> مرا به خاطر بسپار </paper-checkbox>
+    <paper-checkbox checked="{{remember}}"> مرا به خاطر بسپار </paper-checkbox>
     <div style="text-align: center;">
       <paper-button on-tap="_login">ورود</paper-button>
     </div>
@@ -99,6 +99,11 @@ PTC Login Panel
           type: String,
           notify: true,
         },
+
+        remember: {
+          type: Boolean,
+          notify: true,
+        }
       },
 
       _login: function () {
