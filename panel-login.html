@@ -67,8 +67,8 @@ IOrder panel login
     <div style="text-align: center;">
       <iron-image src$="[[logoSrc]]"></iron-image>
     </div>
-    <paper-input label="نام کاربری"></paper-input>
-    <paper-input label="گذرواژه" type="password"></paper-input>
+    <paper-input label="نام کاربری" type="text" value="{{username}}"></paper-input>
+    <paper-input label="گذرواژه" type="password" value="{{password}}"></paper-input>
     <paper-checkbox> مرا به خاطر بسپار </paper-checkbox>
     <div style="text-align: center;">
       <paper-button>ورود</paper-button>
@@ -91,6 +91,17 @@ IOrder panel login
           type: String,
         },
 
+        username: {
+          type: String,
+        },
+
+        password: {
+          type: String,
+        },
+      },
+
+      onlogin: function (username, password) {
+        this.fire('login', username, password)
       },
 
     });
