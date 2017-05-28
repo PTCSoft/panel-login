@@ -12,7 +12,7 @@
     "login",
     "panel"
   ],
-  "license": "Copyright © 2017 PTC Corporation, All rights reserved",
+  "license": "MIT License (MIT)",
   "homepage": "https://github.com/PTCSoft/panel-login",
   "ignore": [
     "**/.*",
