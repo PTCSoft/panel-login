@@ -1,3 +1,3 @@
 # \<panel-login\>
 
-IOrder panel login
+PTC Login Panel
