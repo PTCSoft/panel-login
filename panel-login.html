@@ -1,20 +1,78 @@
-<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../polymer/polymer.html" />
+<link rel="import" href="../paper-input/paper-input.html" />
+<link rel="import" href="../paper-button/paper-button.html" />
+<link rel="import" href="../paper-styles/color.html" />
+<link rel="import" href="../iron-flex-layout/iron-flex-layout.html" />
+<link rel="import" href="../paper-checkbox/paper-checkbox.html" />
+<link rel="import" href="../iron-image/iron-image.html" />
 
 <!--
 `panel-login`
-IOrder panel login
+PTC Login Panel
 
-@demo demo/index.html 
+@demo demo/index.html
 -->
 
 <dom-module id="panel-login">
   <template>
     <style>
       :host {
-        display: block;
+        @apply(--layout-vertical);
+
+        color: var(--primary-text-color);
+
+        @apply(--panel-login);
       }
+
+      iron-image {
+        display: none;
+        margin: 5px auto;
+      }
+
+      iron-image[src] {
+        display: inline-block;
+      }
+
+      paper-button {
+        @apply(--paper-font-button);
+
+        margin-top: 30px;
+        color: var(--primary-color);
+
+        border: 1px solid var(--primary-color);
+
+        --paper-button: {
+          padding: 0.55em 0.57em;
+          min-width: 5.5em;
+          @apply(--login-button-inside);
+        }
+
+        @apply(--login-button);
+      }
+
+      paper-checkbox {
+        margin-top: 30px;
+        display: block;
+        --paper-checkbox-checked-color: var(--primary-color);
+        --paper-checkbox-checked-ink-color: var(--primary-color);
+        --paper-checkbox-unchecked-color: var(--secondary-text-color);
+        --paper-checkbox-unchecked-ink-color: var(--primary-color);
+        --paper-checkbox-label-color: var(--secondary-text-color);
+        --paper-checkbox-label-checked-color: var(--primary-text-color);
+      }
+
     </style>
-    <h2>Hello [[prop1]]</h2>
+
+    <div style="text-align: center;">
+      <iron-image src$="[[logoSrc]]"></iron-image>
+    </div>
+    <paper-input label="نام کاربری" type="text" value="{{username}}"></paper-input>
+    <paper-input label="گذرواژه" type="password" value="{{password}}"></paper-input>
+    <paper-checkbox> مرا به خاطر بسپار </paper-checkbox>
+    <div style="text-align: center;">
+      <paper-button on-tap="_login">ورود</paper-button>
+    </div>
+
   </template>
 
   <script>
@@ -23,10 +81,31 @@ IOrder panel login
       is: 'panel-login',
 
       properties: {
-        prop1: {
+
+        /*
+        * Logo src path (optional)
+        * @default: null
+        */
+        logoSrc: {
           type: String,
-          value: 'panel-login',
         },
+
+        username: {
+          type: String,
+          notify: true,
+        },
+
+        password: {
+          type: String,
+          notify: true,
+        },
+      },
+
+      _login: function () {
+        this.fire('login', {
+          username: this.username,
+          password: this.password
+        });
       },
 
     });

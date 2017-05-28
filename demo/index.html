@@ -16,11 +16,46 @@
     </style>
   </head>
   <body>
-    <div class="vertical-section-container centered">
-      <h3>Basic panel-login demo</h3>
+    <div class="vertical-section-container centered" >
+      <h3>Simple panel-login</h3>
       <demo-snippet>
         <template>
           <panel-login></panel-login>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <div class="vertical-section-container centered" >
+      <h3>RTL mode</h3>
+      <demo-snippet>
+        <template>
+          <panel-login logo-src='./logo.png' dir="rtl"></panel-login>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <div class="vertical-section-container centered">
+      <h3>Basic panel-login without logo</h3>
+      <demo-snippet>
+        <template>
+          <panel-login dir="rtl"></panel-login>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <div class="vertical-section-container centered">
+      <h3>Basic panel-login custumize style</h3>
+      <demo-snippet>
+        <template>
+          <panel-login class="customize" dir="rtl"></panel-login>
+          <style is="custom-style">
+            panel-login.customize {
+              --login-button: {
+                color: var(--invert-text-color);
+                background-color: var(--primary-color);
+              }
+            }
+          </style>
         </template>
       </demo-snippet>
     </div>
